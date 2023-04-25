@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const admin_controller_1 = require("../controllers/admin.controller");
+const adminRouter = (0, express_1.Router)();
+adminRouter.get("/", admin_controller_1.index);
+adminRouter.post("/auth/register", admin_controller_1.register);
+adminRouter.post('/auth/login', admin_controller_1.login);
+adminRouter.patch('/auth/change-password', admin_controller_1.changePassowrd);
+exports.default = adminRouter;
